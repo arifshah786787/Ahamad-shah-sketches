@@ -1,8 +1,483 @@
-<form
-  action="https://formsubmit.co/arifalibhai786786@gmail.com"
-  method="POST"
-  enctype="multipart/form-data">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <input type="hidden" name="_subject" value="New Sketch Order - Ahamad Shah Sketches">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
+<title>Ahamad Shah Sketches</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f5f5f5;
+  color:#222;
+}
+
+header{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+}
+
+header h1{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#ddd;
+}
+
+.container{
+  max-width:700px;
+  margin:25px auto;
+  padding:0 15px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:15px;
+  margin-bottom:20px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+h2{
+  margin-bottom:15px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.service{
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:15px;
+  text-align:center;
+}
+
+.service b{
+  display:block;
+  margin-bottom:6px;
+}
+
+label{
+  display:block;
+  margin-top:15px;
+  margin-bottom:6px;
+  font-weight:bold;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:15px;
+}
+
+textarea{
+  min-height:90px;
+}
+
+.hidden{
+  display:none;
+}
+
+.payment-box{
+  background:#f8f8f8;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+.total{
+  background:#111;
+  color:white;
+  padding:15px;
+  border-radius:10px;
+  margin-top:20px;
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+}
+
+button{
+  width:100%;
+  margin-top:20px;
+  padding:15px;
+  border:0;
+  border-radius:10px;
+  background:#111;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+}
+
+.note{
+  text-align:center;
+  color:#666;
+  font-size:13px;
+  margin-top:12px;
+}
+
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:25px 10px;
+  margin-top:30px;
+}
+
+@media(max-width:500px){
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  header h1{
+    font-size:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>✏️ Ahamad Shah Sketches</h1>
+  <p>Turn Your Memories Into Pencil Art</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="service">
+<b>Single Portrait</b>
+₹100
+</div>
+
+<div class="service">
+<b>Couple Portrait</b>
+₹150
+</div>
+
+<div class="service">
+<b>Family Portrait</b>
+₹70 / Person
+</div>
+
+<div class="service">
+<b>Flowers</b>
+₹100
+</div>
+
+<div class="service">
+<b>Cars</b>
+₹100
+</div>
+
+<div class="service">
+<b>Anime</b>
+₹100
+</div>
+
+<div class="service">
+<b>Animals</b>
+₹100
+</div>
+
+</div>
+</div>
+
+
+<div class="card">
+
+<h2>Place Your Order</h2>
+
+<!-- EMAIL NOTIFICATION + ORDER FORM -->
+<form
+action="https://formsubmit.co/arifalibhai786786@gmail.com"
+method="POST"
+enctype="multipart/form-data">
+
+<input type="hidden" name="_subject" value="New Sketch Order - Ahamad Shah Sketches">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_template" value="table">
+
+
+<label>Customer Name</label>
+
+<input
+type="text"
+name="Customer Name"
+placeholder="Enter your name"
+required>
+
+
+<label>WhatsApp Number</label>
+
+<input
+type="tel"
+name="WhatsApp Number"
+placeholder="Enter WhatsApp number"
+required>
+
+
+<label>Sketch Type</label>
+
+<select id="sketchType" name="Sketch Type" required>
+
+<option value="">Select Sketch Type</option>
+
+<option value="Single Portrait">Single Portrait - ₹100</option>
+
+<option value="Couple Portrait">Couple Portrait - ₹150</option>
+
+<option value="Family Portrait">Family Portrait - ₹70/person</option>
+
+<option value="Flowers">Flowers - ₹100</option>
+
+<option value="Cars">Cars - ₹100</option>
+
+<option value="Anime">Anime - ₹100</option>
+
+<option value="Animals">Animals - ₹100</option>
+
+</select>
+
+
+<div id="familyBox" class="hidden">
+
+<label>Number of People</label>
+
+<input
+type="number"
+id="people"
+name="Number of People"
+min="1"
+value="1">
+
+</div>
+
+
+<label>Reference Photo</label>
+
+<input
+type="file"
+name="Reference Photo"
+accept="image/*"
+required>
+
+
+<label>Delivery Address</label>
+
+<textarea
+name="Delivery Address"
+placeholder="Enter complete delivery address"
+required></textarea>
+
+
+<label>Payment Method</label>
+
+<select id="paymentMethod" name="Payment Method" required>
+
+<option value="">Select Payment Method</option>
+
+<option value="UPI / QR Payment">
+UPI / QR Payment
+</option>
+
+<option value="Cash on Delivery">
+Cash on Delivery (+₹20)
+</option>
+
+</select>
+
+
+<div id="upiBox" class="payment-box hidden">
+
+<b>UPI / QR Payment</b>
+
+<p style="margin-top:8px;">
+Please complete your payment using the QR code.
+</p>
+
+<p style="margin-top:8px;">
+QR scanner will be added here.
+</p>
+
+<label>Payment Screenshot</label>
+
+<input
+type="file"
+name="Payment Screenshot"
+accept="image/*">
+
+</div>
+
+
+<div class="total">
+
+Total Amount: ₹<span id="total">0</span>
+
+</div>
+
+<input
+type="hidden"
+id="totalHidden"
+name="Total Amount"
+value="₹0">
+
+
+<button type="submit">
+Place Order
+</button>
+
+<p class="note">
+Your order details will be sent for processing.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Ahamad Shah Sketches</p>
+
+<p style="margin-top:8px;">
+Pencil Portraits • Objects • Anime • Animals
+</p>
+
+</footer>
+
+
+<script>
+
+const sketchType =
+document.getElementById("sketchType");
+
+const familyBox =
+document.getElementById("familyBox");
+
+const people =
+document.getElementById("people");
+
+const paymentMethod =
+document.getElementById("paymentMethod");
+
+const upiBox =
+document.getElementById("upiBox");
+
+const total =
+document.getElementById("total");
+
+const totalHidden =
+document.getElementById("totalHidden");
+
+
+function calculateTotal(){
+
+let amount = 0;
+
+if(sketchType.value === "Single Portrait"){
+amount = 100;
+}
+
+else if(sketchType.value === "Couple Portrait"){
+amount = 150;
+}
+
+else if(sketchType.value === "Family Portrait"){
+
+let p = parseInt(people.value) || 1;
+
+amount = p * 70;
+
+}
+
+else if(
+sketchType.value === "Flowers" ||
+sketchType.value === "Cars" ||
+sketchType.value === "Anime" ||
+sketchType.value === "Animals"
+){
+
+amount = 100;
+
+}
+
+
+if(paymentMethod.value === "Cash on Delivery"){
+amount += 20;
+}
+
+
+total.textContent = amount;
+
+totalHidden.value = "₹" + amount;
+
+}
+
+
+sketchType.addEventListener("change",function(){
+
+if(this.value === "Family Portrait"){
+
+familyBox.classList.remove("hidden");
+
+}else{
+
+familyBox.classList.add("hidden");
+
+people.value = 1;
+
+}
+
+calculateTotal();
+
+});
+
+
+people.addEventListener("input",calculateTotal);
+
+
+paymentMethod.addEventListener("change",function(){
+
+if(this.value === "UPI / QR Payment"){
+
+upiBox.classList.remove("hidden");
+
+}else{
+
+upiBox.classList.add("hidden");
+
+}
+
+calculateTotal();
+
+});
+
+</script>
+
+</body>
+</html>
