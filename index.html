@@ -3,171 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ahamad Shah Sketches</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
-}
-
+*{box-sizing:border-box}
 body{
-  background:#0d0d0d;
-  color:white;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+  color:#222;
 }
-
 header{
-  padding:18px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
   background:#111;
-  position:sticky;
-  top:0;
-  z-index:10;
-  border-bottom:1px solid #292929;
-}
-
-.logo{
-  font-size:21px;
-  font-weight:bold;
-}
-
-nav a{
   color:white;
-  text-decoration:none;
-  margin-left:15px;
-  font-size:14px;
-}
-
-.hero{
-  padding:70px 20px;
+  padding:28px 18px;
   text-align:center;
-  background:linear-gradient(135deg,#111,#242424);
 }
+header h1{margin:0;font-size:30px}
+header p{margin:10px 0 0;color:#ddd}
 
-.hero h1{
-  font-size:38px;
-  margin-bottom:15px;
-}
-
-.hero p{
-  color:#ccc;
-  font-size:16px;
-  margin-bottom:25px;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 25px;
-  background:#f0c36b;
-  color:#111;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-  border:none;
-  cursor:pointer;
-}
-
-section{
-  padding:45px 20px;
-  max-width:1000px;
+.container{
+  max-width:900px;
   margin:auto;
-}
-
-.title{
-  text-align:center;
-  font-size:28px;
-  margin-bottom:30px;
-}
-
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:15px;
+  padding:20px;
 }
 
 .card{
-  background:#181818;
-  padding:25px 18px;
-  border-radius:15px;
-  text-align:center;
-  border:1px solid #292929;
+  background:white;
+  padding:20px;
+  margin:18px 0;
+  border-radius:16px;
+  box-shadow:0 3px 12px #0001;
 }
 
-.card h3{
-  margin-bottom:10px;
+h2{margin-top:0}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+}
+
+.service{
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
 }
 
 .price{
-  color:#f0c36b;
-  font-size:22px;
+  font-size:20px;
   font-weight:bold;
-}
-
-.order-box{
-  background:#181818;
-  padding:25px;
-  border-radius:18px;
-  max-width:600px;
-  margin:auto;
 }
 
 label{
   display:block;
-  margin-top:16px;
-  margin-bottom:7px;
+  margin-top:15px;
+  font-weight:bold;
 }
 
 input,select,textarea{
   width:100%;
-  padding:13px;
+  padding:12px;
+  margin-top:7px;
+  border:1px solid #ccc;
   border-radius:9px;
-  border:1px solid #444;
-  background:#101010;
-  color:white;
+  font-size:15px;
 }
 
-textarea{
-  height:90px;
-  resize:none;
+textarea{min-height:90px}
+
+.payment-box{
+  border:2px solid #ddd;
+  padding:14px;
+  margin-top:12px;
+  border-radius:12px;
+}
+
+.qr-placeholder{
+  background:#f1f1f1;
+  border-radius:12px;
+  padding:25px;
+  text-align:center;
+  margin-top:12px;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  margin-top:20px;
+  border:0;
+  border-radius:10px;
+  background:#111;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
 }
 
 .total{
-  margin:20px 0;
-  font-size:23px;
+  font-size:24px;
   font-weight:bold;
-  color:#f0c36b;
+  margin-top:20px;
 }
 
-.notice{
-  background:#24200f;
-  padding:15px;
-  border-radius:10px;
-  margin-top:15px;
-  color:#ddd;
-  font-size:14px;
+.result{
+  display:none;
+  background:#e9ffe9;
+  border:1px solid #8bd18b;
+  padding:18px;
+  border-radius:12px;
+  margin-top:20px;
 }
 
 footer{
-  text-align:center;
-  padding:30px 20px;
   background:#111;
-  color:#aaa;
-}
-
-@media(max-width:600px){
-  .hero h1{
-    font-size:31px;
-  }
-
-  nav a{
-    font-size:12px;
-    margin-left:8px;
-  }
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:30px;
+  line-height:1.8;
 }
 </style>
 </head>
@@ -175,247 +128,259 @@ footer{
 <body>
 
 <header>
-  <div class="logo">✏️ Ahamad Shah</div>
-
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#order">Order</a>
-  </nav>
+  <h1>✏️ Ahamad Shah Sketches</h1>
+  <p>Turn Your Memories Into Pencil Art</p>
 </header>
 
-<section class="hero">
-  <h1>Turn Your Memories Into Pencil Art ✏️</h1>
+<div class="container">
 
-  <p>
-    Custom pencil sketches made with care.
-    Portraits, couples, families, anime, animals & more.
-  </p>
+<div class="card">
+<h2>🎨 Our Services</h2>
 
-  <a href="#order" class="btn">Order Your Sketch</a>
-</section>
+<div class="services">
 
-<section id="services">
+<div class="service">
+<b>Single Portrait</b>
+<div class="price">₹100</div>
+</div>
 
-  <h2 class="title">Our Services</h2>
+<div class="service">
+<b>Couple Portrait</b>
+<div class="price">₹150</div>
+</div>
 
-  <div class="services">
+<div class="service">
+<b>Family Portrait</b>
+<div class="price">₹70 / person</div>
+</div>
 
-    <div class="card">
-      <h3>Single Portrait</h3>
-      <p class="price">₹100</p>
-    </div>
+<div class="service">
+<b>Flowers</b>
+<div class="price">₹100</div>
+</div>
 
-    <div class="card">
-      <h3>Couple Portrait</h3>
-      <p class="price">₹150</p>
-    </div>
+<div class="service">
+<b>Cars</b>
+<div class="price">₹100</div>
+</div>
 
-    <div class="card">
-      <h3>Family Portrait</h3>
-      <p class="price">₹70 / Person</p>
-    </div>
+<div class="service">
+<b>Anime</b>
+<div class="price">₹100</div>
+</div>
 
-    <div class="card">
-      <h3>Flowers 🌸</h3>
-      <p>Custom Sketch</p>
-    </div>
+<div class="service">
+<b>Animals</b>
+<div class="price">₹100</div>
+</div>
 
-    <div class="card">
-      <h3>Cars 🚗</h3>
-      <p>Custom Sketch</p>
-    </div>
+</div>
+</div>
 
-    <div class="card">
-      <h3>Anime 🎨</h3>
-      <p>Custom Sketch</p>
-    </div>
 
-    <div class="card">
-      <h3>Animals 🐾</h3>
-      <p>Custom Sketch</p>
-    </div>
+<div class="card">
+<h2>📝 Place Your Order</h2>
 
-  </div>
+<form id="orderForm">
 
-</section>
+<label>Your Name</label>
+<input type="text" id="name" required>
 
-<section id="order">
+<label>WhatsApp Number</label>
+<input type="tel" id="phone" required>
 
-  <h2 class="title">Order Your Sketch</h2>
+<label>Select Sketch Type</label>
+<select id="type" onchange="calculateTotal()" required>
+<option value="">-- Select --</option>
+<option value="100">Single Portrait - ₹100</option>
+<option value="150">Couple Portrait - ₹150</option>
+<option value="70">Family Portrait - ₹70/person</option>
+<option value="100">Flowers - ₹100</option>
+<option value="100">Cars - ₹100</option>
+<option value="100">Anime - ₹100</option>
+<option value="100">Animals - ₹100</option>
+</select>
 
-  <div class="order-box">
+<label id="peopleLabel" style="display:none">
+Number of People
+</label>
+<input type="number" id="people" min="1" value="1"
+style="display:none"
+oninput="calculateTotal()">
 
-    <form id="orderForm">
+<label>Upload Reference Photo</label>
+<input type="file" id="photo" accept="image/*" required>
 
-      <label>Your Name</label>
-      <input type="text" id="name" required>
+<label>Delivery Address</label>
+<textarea id="address" required></textarea>
 
-      <label>WhatsApp Number</label>
-      <input type="tel" id="phone" required>
 
-      <label>Sketch Type</label>
+<h3>💳 Payment Method</h3>
 
-      <select id="type" onchange="calculate()" required>
+<div class="payment-box">
+<label>
+<input type="radio" name="payment" value="upi"
+style="width:auto"
+onchange="paymentChanged()" required>
+ UPI / QR Payment
+</label>
 
-        <option value="100">Single Portrait - ₹100</option>
-        <option value="150">Couple Portrait - ₹150</option>
-        <option value="70">Family Portrait - ₹70/person</option>
-        <option value="100">Flowers - ₹100</option>
-        <option value="100">Cars - ₹100</option>
-        <option value="100">Anime - ₹100</option>
-        <option value="100">Animals - ₹100</option>
+<div id="upiBox" style="display:none">
 
-      </select>
+<div class="qr-placeholder">
+<b>📱 Your UPI QR Scanner</b>
+<br><br>
+QR image yahan baad mein add ki ja sakti hai.
+<br><br>
+<b>Payment karne ke baad screenshot upload karein.</b>
+</div>
 
-      <label>Number of People</label>
+<label>Payment Screenshot</label>
+<input type="file" id="paymentScreenshot" accept="image/*">
+</div>
+</div>
 
-      <input
-        type="number"
-        id="people"
-        value="1"
-        min="1"
-        onchange="calculate()"
-      >
 
-      <label>Upload Reference Photo</label>
+<div class="payment-box">
+<label>
+<input type="radio" name="payment" value="cod"
+style="width:auto"
+onchange="paymentChanged()">
+ 📦 Cash on Delivery (+₹20)
+</label>
+</div>
 
-      <input
-        type="file"
-        accept="image/*"
-        required
-      >
 
-      <label>Delivery Address</label>
+<div class="total">
+Total: ₹<span id="total">0</span>
+</div>
 
-      <textarea
-        placeholder="Enter your complete delivery address"
-        required
-      ></textarea>
+<button type="submit">✅ Place Order</button>
 
-      <div class="total">
-        Total: ₹<span id="total">100</span>
-      </div>
+</form>
 
-      <div class="notice">
-        📦 All India Delivery Available<br>
-        💳 Payment First<br>
-        📅 Expected delivery date will be shown after order confirmation.
-      </div>
 
-      <br>
+<div class="result" id="result">
+<h3>🎉 Order Received!</h3>
+<p><b>Order ID:</b> <span id="orderId"></span></p>
+<p><b>Expected Delivery:</b> <span id="delivery"></span></p>
+<p><b>Status:</b> Order Received</p>
+<p>We will contact you regarding your order.</p>
+</div>
 
-      <button class="btn" type="submit">
-        Place Order
-      </button>
+</div>
 
-    </form>
+</div>
 
-    <div id="result"></div>
-
-  </div>
-
-</section>
-
-<section>
-
-  <h2 class="title">Why Order From Us?</h2>
-
-  <div class="services">
-
-    <div class="card">
-      ✏️
-      <h3>Handmade Art</h3>
-      <p>Every sketch is personally created.</p>
-    </div>
-
-    <div class="card">
-      📦
-      <h3>All India Delivery</h3>
-      <p>Your artwork can be delivered across India.</p>
-    </div>
-
-    <div class="card">
-      ❤️
-      <h3>Made With Care</h3>
-      <p>Your memories deserve special artwork.</p>
-    </div>
-
-  </div>
-
-</section>
 
 <footer>
-
-  <p><b>Ahamad Shah Sketches</b></p>
-
-  <p>Instagram: @Ahamad_shah78653</p>
-
-  <p>WhatsApp: 9250215307</p>
-
-  <p>Email: arifalibhai786786@gmail.com</p>
-
-  <br>
-
-  <p>© 2026 Ahamad Shah Sketches</p>
-
+<b>Ahamad Shah Sketches</b><br>
+Instagram: @Ahamad_shah78653<br>
+WhatsApp: 9250215307<br>
+Email: arifalibhai786786@gmail.com<br>
+© 2026 Ahamad Shah Sketches
 </footer>
+
 
 <script>
 
-function calculate(){
+function calculateTotal(){
 
-  let type = document.getElementById("type").value;
-  let people = document.getElementById("people").value;
+let type=document.getElementById("type").value;
+let people=document.getElementById("people").value || 1;
 
-  let total;
+let total=0;
 
-  if(type == 70){
-    total = 70 * people;
-  }else{
-    total = Number(type);
-  }
+if(type){
 
-  document.getElementById("total").innerText = total;
+if(type=="70"){
+total=70*people;
+}else{
+total=Number(type);
 }
+
+}
+
+let payment=document.querySelector('input[name="payment"]:checked');
+
+if(payment && payment.value=="cod"){
+total+=20;
+}
+
+document.getElementById("total").innerText=total;
+
+}
+
+
+document.getElementById("type").addEventListener("change",function(){
+
+if(this.value=="70"){
+
+document.getElementById("peopleLabel").style.display="block";
+document.getElementById("people").style.display="block";
+
+}else{
+
+document.getElementById("peopleLabel").style.display="none";
+document.getElementById("people").style.display="none";
+
+}
+
+calculateTotal();
+
+});
+
+
+function paymentChanged(){
+
+let payment=document.querySelector('input[name="payment"]:checked');
+
+let upiBox=document.getElementById("upiBox");
+
+if(payment && payment.value=="upi"){
+upiBox.style.display="block";
+}else{
+upiBox.style.display="none";
+}
+
+calculateTotal();
+
+}
+
 
 document.getElementById("orderForm").addEventListener("submit",function(e){
 
-  e.preventDefault();
+e.preventDefault();
 
-  let orderId =
-    "ASH-" +
-    Math.floor(100000 + Math.random() * 900000);
+let payment=document.querySelector('input[name="payment"]:checked');
 
-  let delivery = new Date();
+if(payment.value=="upi"){
 
-  delivery.setDate(delivery.getDate() + 7);
+let screenshot=document.getElementById("paymentScreenshot");
 
-  let date = delivery.toLocaleDateString("en-IN");
+if(!screenshot.files.length){
 
-  document.getElementById("result").innerHTML = `
+alert("Please upload your payment screenshot.");
+return;
 
-    <div class="notice">
+}
 
-      <h3>🎉 Order Created!</h3>
+}
 
-      <br>
+let orderId="AS"+Math.floor(100000+Math.random()*900000);
 
-      <p><b>Order ID:</b> ${orderId}</p>
+let date=new Date();
+date.setDate(date.getDate()+7);
 
-      <p><b>Expected Delivery:</b> ${date}</p>
+document.getElementById("orderId").innerText=orderId;
+document.getElementById("delivery").innerText=date.toDateString();
 
-      <p><b>Status:</b> Order Received</p>
+document.getElementById("result").style.display="block";
 
-      <br>
-
-      <p>
-      Your order details have been recorded.
-      Payment confirmation will be added in the next version.
-      </p>
-
-    </div>
-
-  `;
+window.scrollTo({
+top:document.getElementById("result").offsetTop,
+behavior:"smooth"
+});
 
 });
 
