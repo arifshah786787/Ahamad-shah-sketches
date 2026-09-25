@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ahamad Shah Sketches</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#0d0d0d;
+  color:white;
+}
+
+header{
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#111;
+  position:sticky;
+  top:0;
+  z-index:10;
+  border-bottom:1px solid #292929;
+}
+
+.logo{
+  font-size:21px;
+  font-weight:bold;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  font-size:14px;
+}
+
+.hero{
+  padding:70px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#111,#242424);
+}
+
+.hero h1{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#ccc;
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  background:#f0c36b;
+  color:#111;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+
+section{
+  padding:45px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#181818;
+  padding:25px 18px;
+  border-radius:15px;
+  text-align:center;
+  border:1px solid #292929;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.price{
+  color:#f0c36b;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.order-box{
+  background:#181818;
+  padding:25px;
+  border-radius:18px;
+  max-width:600px;
+  margin:auto;
+}
+
+label{
+  display:block;
+  margin-top:16px;
+  margin-bottom:7px;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  border-radius:9px;
+  border:1px solid #444;
+  background:#101010;
+  color:white;
+}
+
+textarea{
+  height:90px;
+  resize:none;
+}
+
+.total{
+  margin:20px 0;
+  font-size:23px;
+  font-weight:bold;
+  color:#f0c36b;
+}
+
+.notice{
+  background:#24200f;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+  color:#ddd;
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  padding:30px 20px;
+  background:#111;
+  color:#aaa;
+}
+
+@media(max-width:600px){
+  .hero h1{
+    font-size:31px;
+  }
+
+  nav a{
+    font-size:12px;
+    margin-left:8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">✏️ Ahamad Shah</div>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#order">Order</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Turn Your Memories Into Pencil Art ✏️</h1>
+
+  <p>
+    Custom pencil sketches made with care.
+    Portraits, couples, families, anime, animals & more.
+  </p>
+
+  <a href="#order" class="btn">Order Your Sketch</a>
+</section>
+
+<section id="services">
+
+  <h2 class="title">Our Services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <h3>Single Portrait</h3>
+      <p class="price">₹100</p>
+    </div>
+
+    <div class="card">
+      <h3>Couple Portrait</h3>
+      <p class="price">₹150</p>
+    </div>
+
+    <div class="card">
+      <h3>Family Portrait</h3>
+      <p class="price">₹70 / Person</p>
+    </div>
+
+    <div class="card">
+      <h3>Flowers 🌸</h3>
+      <p>Custom Sketch</p>
+    </div>
+
+    <div class="card">
+      <h3>Cars 🚗</h3>
+      <p>Custom Sketch</p>
+    </div>
+
+    <div class="card">
+      <h3>Anime 🎨</h3>
+      <p>Custom Sketch</p>
+    </div>
+
+    <div class="card">
+      <h3>Animals 🐾</h3>
+      <p>Custom Sketch</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="order">
+
+  <h2 class="title">Order Your Sketch</h2>
+
+  <div class="order-box">
+
+    <form id="orderForm">
+
+      <label>Your Name</label>
+      <input type="text" id="name" required>
+
+      <label>WhatsApp Number</label>
+      <input type="tel" id="phone" required>
+
+      <label>Sketch Type</label>
+
+      <select id="type" onchange="calculate()" required>
+
+        <option value="100">Single Portrait - ₹100</option>
+        <option value="150">Couple Portrait - ₹150</option>
+        <option value="70">Family Portrait - ₹70/person</option>
+        <option value="100">Flowers - ₹100</option>
+        <option value="100">Cars - ₹100</option>
+        <option value="100">Anime - ₹100</option>
+        <option value="100">Animals - ₹100</option>
+
+      </select>
+
+      <label>Number of People</label>
+
+      <input
+        type="number"
+        id="people"
+        value="1"
+        min="1"
+        onchange="calculate()"
+      >
+
+      <label>Upload Reference Photo</label>
+
+      <input
+        type="file"
+        accept="image/*"
+        required
+      >
+
+      <label>Delivery Address</label>
+
+      <textarea
+        placeholder="Enter your complete delivery address"
+        required
+      ></textarea>
+
+      <div class="total">
+        Total: ₹<span id="total">100</span>
+      </div>
+
+      <div class="notice">
+        📦 All India Delivery Available<br>
+        💳 Payment First<br>
+        📅 Expected delivery date will be shown after order confirmation.
+      </div>
+
+      <br>
+
+      <button class="btn" type="submit">
+        Place Order
+      </button>
+
+    </form>
+
+    <div id="result"></div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="title">Why Order From Us?</h2>
+
+  <div class="services">
+
+    <div class="card">
+      ✏️
+      <h3>Handmade Art</h3>
+      <p>Every sketch is personally created.</p>
+    </div>
+
+    <div class="card">
+      📦
+      <h3>All India Delivery</h3>
+      <p>Your artwork can be delivered across India.</p>
+    </div>
+
+    <div class="card">
+      ❤️
+      <h3>Made With Care</h3>
+      <p>Your memories deserve special artwork.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p><b>Ahamad Shah Sketches</b></p>
+
+  <p>Instagram: @Ahamad_shah78653</p>
+
+  <p>WhatsApp: 9250215307</p>
+
+  <p>Email: arifalibhai786786@gmail.com</p>
+
+  <br>
+
+  <p>© 2026 Ahamad Shah Sketches</p>
+
+</footer>
+
+<script>
+
+function calculate(){
+
+  let type = document.getElementById("type").value;
+  let people = document.getElementById("people").value;
+
+  let total;
+
+  if(type == 70){
+    total = 70 * people;
+  }else{
+    total = Number(type);
+  }
+
+  document.getElementById("total").innerText = total;
+}
+
+document.getElementById("orderForm").addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  let orderId =
+    "ASH-" +
+    Math.floor(100000 + Math.random() * 900000);
+
+  let delivery = new Date();
+
+  delivery.setDate(delivery.getDate() + 7);
+
+  let date = delivery.toLocaleDateString("en-IN");
+
+  document.getElementById("result").innerHTML = `
+
+    <div class="notice">
+
+      <h3>🎉 Order Created!</h3>
+
+      <br>
+
+      <p><b>Order ID:</b> ${orderId}</p>
+
+      <p><b>Expected Delivery:</b> ${date}</p>
+
+      <p><b>Status:</b> Order Received</p>
+
+      <br>
+
+      <p>
+      Your order details have been recorded.
+      Payment confirmation will be added in the next version.
+      </p>
+
+    </div>
+
+  `;
+
+});
+
+</script>
+
+</body>
+</html>
